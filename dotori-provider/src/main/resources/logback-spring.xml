@@ -2,7 +2,9 @@
 <configuration>
     <timestamp key="BY_DATE" datePattern="yyyy-MM-dd"/>
     <property name="LOG_PATTERN"
-               value="[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%-12thread] %-5level %-48logger{36} - %msg%n"/>
+              value="[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%-12thread] %-5level %-48logger{36} - %msg%n"/>
+
+    <appender name="SENTRY" class="io.sentry.logback.SentryAppender"/>
 
     <springProfile name="!dev">
         <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
@@ -13,6 +15,7 @@
 
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="SENTRY"/>
         </root>
     </springProfile>
 
@@ -32,6 +35,7 @@
 
         <root level="INFO">
             <appender-ref ref="FILE"/>
+            <appender-ref ref="SENTRY"/>
         </root>
     </springProfile>
 </configuration>
