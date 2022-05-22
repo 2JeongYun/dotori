@@ -1,0 +1,12 @@
+#sentry:
+#  dsn: https://2e5e911b402f4a58bf83bc0a6a9c4c2e@o1209151.ingest.sentry.io/6342586
+#  exception-resolver-order: -2147483647
+#  sentry.logging.minimum-event-level: error
+#  sentry.logging.minimum-breadcrumb-level: info
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---

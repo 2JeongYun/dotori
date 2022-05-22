@@ -74,6 +74,8 @@ project(":dotori-core") {
 project(":dotori-provider") {
     dependencies {
         implementation("org.springframework.boot:spring-boot-starter-web")
+        implementation("io.sentry:sentry-spring-boot-starter:5.7.4")
+        implementation("io.sentry:sentry-logback:5.7.4")
         developmentOnly("org.springframework.boot:spring-boot-devtools")
     }
 }
